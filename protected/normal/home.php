@@ -1,6 +1,6 @@
 
 <?php
-    $query = "SELECT id, uid, recipe_name, liked, disliked, hozzaadas_datuma, hozzavalok, elkeszites FROM recipes";
+    $query = "SELECT id, uid, recipe_name, liked, dislike, hozzaadas_datuma, hozzavalok, elkeszites FROM recipes";
     require_once DATABASE_CONTROLLER;
     $recipes = getList($query);
 ?>
@@ -15,8 +15,6 @@
                     <th scope="col">Liked</th>
                     <th scope="col">Disliked</th>
                     <th scope="col">Arány</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,10 +24,8 @@
                     <tr>
                         <td><?=$r['recipe_name'] ?></td>
                         <td><?=$r['liked'] ?></td>
-                        <td><?=$r['disliked'] ?></td>
+                        <td><?=$r['dislike'] ?></td>
                         <td>matekképlet</td>
-                        <td><a href="#">Edit</a></td>
-                        <td><a href="#">Delete</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

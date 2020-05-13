@@ -3,7 +3,7 @@
 <?php else : ?>
 <?php
     $ID = $_SESSION['uid'];
-    $query = "SELECT recipe_name, liked, disliked FROM recipes";
+    $query = "SELECT recipe_name, liked, dislike FROM recipes WHERE uid = $ID";
     require_once DATABASE_CONTROLLER;
     $recipes = getList($query);
 ?>
@@ -29,7 +29,7 @@
                     <tr>
                         <td><?=$r['recipe_name'] ?></td>
                         <td><?=$r['liked'] ?></td>
-                        <td><?=$r['disliked'] ?></td>
+                        <td><?=$r['dislike'] ?></td>
                         <td>matekképlet</td>
                         <td><a href="#">Edit</a></td>
                         <td><a href="#">Delete</a></td>
