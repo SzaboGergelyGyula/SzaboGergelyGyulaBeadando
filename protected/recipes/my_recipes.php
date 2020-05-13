@@ -1,6 +1,9 @@
-
+<?php if(!isset($_SESSION['permission'])|| $_SESSION['permission'] <= 0) : ?>
+    <h1>Page access is forbidden!</h1>
+<?php else : ?>
 <?php
-    $query = "SELECT id, uid, recipe_name, liked, disliked, hozzaadas_datuma, hozzavalok, elkeszites FROM recipes";
+    $ID = $_SESSION['uid'];
+    $query = "SELECT recipe_name, liked, disliked FROM recipes";
     require_once DATABASE_CONTROLLER;
     $recipes = getList($query);
 ?>
@@ -35,3 +38,4 @@
             </tbody>
         </table>
     <?php endif; ?>
+<?php endif; ?>
