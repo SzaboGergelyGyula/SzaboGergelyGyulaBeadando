@@ -1,0 +1,1 @@
+<center>Copyright &copy; 2020 Gergely Gyula Szabó</center>
