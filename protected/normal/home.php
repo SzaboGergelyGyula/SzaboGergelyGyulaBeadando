@@ -1,6 +1,6 @@
 
 <?php
-    $query = "SELECT id, uid, recipe_name, liked, dislike, hozzaadas_datuma, hozzavalok, elkeszites FROM recipes";
+    $query = "SELECT id, recipe_name, liked, dislike, hozzaadas_datuma FROM recipes ORDER BY hozzaadas_datuma";
     require_once DATABASE_CONTROLLER;
     $recipes = getList($query);
 ?>
@@ -22,7 +22,7 @@
                 <?php foreach ($recipes as $r) : ?>
                     <?php $i++; ?>
                     <tr>
-                        <td><?=$r['recipe_name'] ?></td>
+                        <td><a href="<?='index.php?P=recipe&id='.$r['id']?>"><?=$r['recipe_name'] ?></a></td>
                         <td><?=$r['liked'] ?></td>
                         <td><?=$r['dislike'] ?></td>
                         <td>matekképlet</td>
