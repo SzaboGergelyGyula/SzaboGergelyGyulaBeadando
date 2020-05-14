@@ -22,7 +22,7 @@
                 <?php foreach ($recipes as $r) : ?>
                     <?php $i++; ?>
                     <tr>
-                        <td><a href="<?='index.php?P=recipe&id='.$r['id']?>"><?=$r['recipe_name'] ?></a></td>
+                        <td><a href="?P=recipe&r=<?=$r['id']?>"><?=$r['recipe_name'] ?></a></td>
                         <td><?=$r['liked'] ?></td>
                         <td><?=$r['dislike'] ?></td>
                         <td>matekképlet</td>

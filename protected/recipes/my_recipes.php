@@ -3,7 +3,7 @@
 <?php else : ?>
 <?php
     $ID = $_SESSION['uid'];
-    $query = "SELECT recipe_name, liked, dislike FROM recipes WHERE uid = $ID";
+    $query = "SELECT id, recipe_name, liked, dislike FROM recipes WHERE uid = $ID";
     require_once DATABASE_CONTROLLER;
     $recipes = getList($query);
 ?>
@@ -27,7 +27,7 @@
                 <?php foreach ($recipes as $r) : ?>
                     <?php $i++; ?>
                     <tr>
-                        <td><?=$r['recipe_name'] ?></td>
+                        <td><a href="?P=recipe&r=<?=$r['id'] ?>"><?=$r['recipe_name'] ?></a></td>
                         <td><?=$r['liked'] ?></td>
                         <td><?=$r['dislike'] ?></td>
                         <td>matekképlet</td>
